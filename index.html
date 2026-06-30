@@ -320,7 +320,7 @@
     border: 1px solid var(--line);
     border-radius: 22px;
     padding: 48px;
-    max-width: 640px;
+    max-width: 896px;
     width: 100%;
     position: relative;
     max-height: 88vh;
@@ -403,13 +403,13 @@
   .modal-pdf-wrap embed {
     display: block;
     width: 100%;
-    height: 460px;
+    height: 640px;
     background: #ffffff;
   }
 
   /* ---------- Ticker ---------- */
   .ticker-bar {
-    height: 26px;
+    height: 36px;
     flex-shrink: 0;
     display: flex;
     align-items: stretch;
@@ -421,16 +421,37 @@
   .ticker-label {
     flex-shrink: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 2px;
     padding: 0 14px;
     background: var(--gold);
     opacity: 1;
     color: #000000;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
     font-weight: 500;
     letter-spacing: 0.07em;
+  }
+
+  .ticker-label .label-top {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.62rem;
+  }
+
+  .ticker-label .label-sub {
+    font-size: 0.42rem;
+    opacity: 0.65;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .ticker-label .asterisk {
+    position: relative;
+    top: -0.4em;
+    font-size: 1.2em;
   }
 
   .ticker-label .dot {
@@ -529,7 +550,10 @@
 </main>
 
 <div class="ticker-bar">
-  <div class="ticker-label"><span class="dot"></span>MARKETS</div>
+  <div class="ticker-label">
+    <div class="label-top"><span class="dot"></span>MARKETS</div>
+    <div class="label-sub"><span class="asterisk">*</span>ILLUSTRATIVE</div>
+  </div>
   <div class="ticker-viewport">
     <div class="ticker-track" id="tickerTrack"></div>
   </div>
